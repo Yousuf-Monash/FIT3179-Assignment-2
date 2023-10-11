@@ -1,0 +1,19 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Drag out a rectangular brush to highlight points.",
+    "data": {"url": "https://raw.githubusercontent.com/Yousuf-Monash/3179-Homework10/main/data/Billionaires%20Statistics%20Dataset.csv"},
+    "params": [{
+      "name": "brush",
+      "select": "interval",
+      "value": {"x": [55, 160], "y": [13, 37]}
+    }],
+    "mark": "point",
+    "encoding": {
+        "x": {"title": "Age", "field": "age", "type": "quantitative"},
+        "y": {"title": "Final Worth","field": "finalWorth", "type": "quantitative"},
+        "color": {
+        "condition": {"param": "brush", "field": "category", "type": "nominal"},
+        "value": "grey"
+        }
+    }
+  }

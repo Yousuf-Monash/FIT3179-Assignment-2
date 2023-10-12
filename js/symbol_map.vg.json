@@ -6,6 +6,7 @@
   "vconcat": [
     {
       "width": "container",
+      
       "height": 450,
       "title": "Combined Wealth of Billionaires in each country 2023",
       "projection": {"type": "equirectangular"},
@@ -53,7 +54,8 @@
               "field": "sum_worth",
               "type": "quantitative",
               "title": "Combined Wealth in Millions",
-              "scale": {"type": "log"}
+              "scale": {"type": "log"},
+              "legend": null
           },
           "tooltip": [
             {
@@ -90,7 +92,8 @@
             "color": {
             "title": "Self Made",
             "field": "selfMade", 
-            "type": "nominal"
+            "type": "nominal",
+            "legend": {"orient": "none", "legendX": 980, "legendY": 520, "zindex": 0, "fillColor":"lightgray", "padding":20, "cornerRadius": 20}
             },
             "opacity" : {
             "condition" : { "param" : "selfMade_highlight", "value" : 0.6 },

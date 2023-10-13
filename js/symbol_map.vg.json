@@ -9,7 +9,7 @@
       
       "height": 450,
       "title": "Combined Wealth of Billionaires in each country 2023",
-      "projection": {"type": "equirectangular"},
+      "projection": {"type": "equalEarth"},
       "layer": [
         {
           "data": {

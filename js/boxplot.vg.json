@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A boxplot showing the distribution of finalWorth across different categories.",
+    "data": {"url": "https://raw.githubusercontent.com/Yousuf-Monash/3179-Homework10/main/data/Billionaires%20Statistics%20Dataset.csv"},
+    "width": "container",
+    "mark": "boxplot",
+    "encoding": {
+      "y": {
+        "field": "category",
+        "type": "nominal",
+        "axis": {"title": "Category"}
+      },
+      "x": {
+        "field": "finalWorth",
+        "type": "quantitative",
+        "scale": {"type": "log"},
+        "axis": {"title": "Final Worth (log scale)"}
+      },
+      "color": {
+        "field": "category",
+        "type": "nominal",
+        "legend": {"title": "Category"}
+      }
+    },
+    "config": {
+      "boxplot": {
+        "extent": 1.5
+      }
+    }
+  }
+  

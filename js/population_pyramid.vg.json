@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A population pyramid for billionaires.",
-    "data": {"url": "https://raw.githubusercontent.com/Yousuf-Monash/3179-Homework10/main/data/Billionaires%20Statistics%20Dataset.csv"},
+    "data": {"url": "https://raw.githubusercontent.com/Yousuf-Monash/FIT3179-Assignment-2/main/data/Billionaires%20Statistics%20Dataset.csv"},
     "transform": [
       {"calculate": "datum.gender == 'M' ? 'Male' : 'Female'", "as": "gender"},
       {

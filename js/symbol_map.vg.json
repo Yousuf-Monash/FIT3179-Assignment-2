@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/Yousuf-Monash/3179-Homework10/main/data/Billionaires%20Statistics%20Dataset.csv"
+    "url": "https://raw.githubusercontent.com/Yousuf-Monash/FIT3179-Assignment-2/main/data/Billionaires%20Statistics%20Dataset.csv"
   },
   "vconcat": [
     {
@@ -104,7 +104,7 @@
         {
           "transform": [
               {
-                "calculate": "'The richest man in the world has a Net Worth of ' + datum['finalWorth']/1000 + ' billion'",
+                "calculate": "'The richest man in the world has a Net Worth of ' + datum['finalWorth']/1000000000 + ' billion'",
                 "as": "text_annotation"
               }
           ],
@@ -116,7 +116,7 @@
             "text": {"field": "text_annotation"},
             "opacity": {
               "condition": {
-                "test": "datum['finalWorth'] > 200000", 
+                "test": "datum['finalWorth'] > 200000000000", 
                 "value": 1
               },
               "value": 0

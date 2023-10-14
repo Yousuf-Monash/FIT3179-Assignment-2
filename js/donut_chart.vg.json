@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A donut chart comparing the number of Male and Female billionaires.",
+    "data": {"url": "https://raw.githubusercontent.com/Yousuf-Monash/3179-Homework10/main/data/Billionaires%20Statistics%20Dataset.csv"},
+    "transform": [
+      {
+        "calculate": "datum.gender == 'M' ? 'Male' : 'Female'",
+        "as": "gender_full"
+      },
+      {
+        "aggregate": [{"op": "count", "as": "count"}],
+        "groupby": ["gender_full"]
+      }
+    ],
+    "mark": {"type": "arc", "innerRadius": 50},
+    "encoding": {
+      "theta": {"field": "count", "type": "quantitative"},
+      "color": {
+        "field": "gender_full", 
+        "type": "nominal", 
+        "legend": {"title": "Gender"},
+        "scale": {"domain": ["Male", "Female"], "range": ["#1f77b4", "#e377c2"]}
+      },
+      "tooltip": [
+        {"field": "gender_full", "type": "nominal", "title": "Gender"},
+        {"field": "count", "type": "quantitative", "title": "Number of Billionaires"}
+      ]
+    }
+  }

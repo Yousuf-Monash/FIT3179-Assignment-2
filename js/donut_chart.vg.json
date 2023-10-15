@@ -2,28 +2,64 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A donut chart comparing the number of Male and Female billionaires.",
     "data": {"url": "https://raw.githubusercontent.com/Yousuf-Monash/3179-Homework10/main/data/Billionaires%20Statistics%20Dataset.csv"},
-    "transform": [
+    "layer":[
       {
-        "calculate": "datum.gender == 'M' ? 'Male' : 'Female'",
-        "as": "gender_full"
+        "params": [{
+        "name": "pts", 
+        "select": {"type": "point", "on": "mouseover"}
+        }],
+        "transform": [
+          {
+            "calculate": "datum.gender == 'M' ? 'Male' : 'Female'",
+            "as": "gender_full"
+          },
+          {
+            "aggregate": [{"op": "count", "as": "count"}],
+            "groupby": ["gender_full"]
+          }
+        ],
+        "mark": {"type": "arc", "innerRadius": 55},
+        "encoding": {
+          "theta": {"field": "count", "type": "quantitative"},
+          "stroke": {
+          "condition": {
+            "param": "pts",
+            "empty": false,
+            "value": "black"
+          },
+          "value": null
+        },
+          "color": {
+            "field": "gender_full", 
+            "type": "nominal", 
+            "legend": {"title": "Gender"},
+            "scale": {"domain": ["Male", "Female"], "range": ["#1f77b4", "#e377c2"]}
+          },
+          "opacity": {
+          "condition": {"param": "pts", "value": 1},
+          "value": 0.5
+        },
+          "tooltip": [
+            {"field": "gender_full", "type": "nominal", "title": "Gender"},
+            {"field": "count", "type": "quantitative", "title": "Number of Billionaires"}
+          ]
+        }
+    },
+    {
+      "encoding": {
+        "text": {"value": "2303"},
+        "color": {"value": "white"},
+        "size": {"value": 16}
       },
-      {
-        "aggregate": [{"op": "count", "as": "count"}],
-        "groupby": ["gender_full"]
-      }
-    ],
-    "mark": {"type": "arc", "innerRadius": 50},
-    "encoding": {
-      "theta": {"field": "count", "type": "quantitative"},
-      "color": {
-        "field": "gender_full", 
-        "type": "nominal", 
-        "legend": {"title": "Gender"},
-        "scale": {"domain": ["Male", "Female"], "range": ["#1f77b4", "#e377c2"]}
+      "mark": {"type": "text", "dx": -76, "dy": 0}
+    },
+    {
+      "encoding": {
+        "text": {"value": "337"},
+        "color": {"value": "white"},
+        "size": {"value": 16}
       },
-      "tooltip": [
-        {"field": "gender_full", "type": "nominal", "title": "Gender"},
-        {"field": "count", "type": "quantitative", "title": "Number of Billionaires"}
-      ]
+      "mark": {"type": "text", "dx": 29, "dy": -70}
     }
-  }
+  ]
+}

@@ -11,10 +11,10 @@
         "axis": {"title": "Category"}
       },
       "x": {
+        "title": "Net Worth",
         "field": "finalWorth",
         "type": "quantitative",
-        "scale": {"type": "log"},
-        "axis": {"title": "Final Worth (log scale)"}
+        "scale": {"type": "log"}
       },
       "color": {
         "field": "category",
@@ -24,8 +24,25 @@
     },
     "config": {
       "boxplot": {
-        "extent": 1.5
-      }
+        "extent": 2
+      },
+      "background": "#dff7f7",
+      "font": "PT Serif",
+      "padding": {"top": 10, "bottom": 10, "left": 30, "right": 30},
+      "view": {"stroke": null},
+      "legend": {
+        "titleFontSize": 12,
+        "titleColor": "gray",
+        "labelColor": "gray",
+        "direction": "vertical",
+        "orient": "right",
+        "gradientLength": 180,
+        "gradientThickness": 10,
+        "gradientLabelOffset": 5,
+        "offset": 20
+      },
+      "text": {"fontSize": 13},
+      "title": {"fontSize": 20, "offset": 5}
     }
   }
   

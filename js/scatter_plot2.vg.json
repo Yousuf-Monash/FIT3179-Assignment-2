@@ -1,0 +1,82 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Yousuf-Monash/FIT3179-Assignment-2/main/data/data.json"
+    },
+    "width": "container",
+    "transform": [
+        {
+          "aggregate": [{
+          "op": "sum",
+          "field": "finalWorth",
+          "as": "sum_worth"
+          }],
+          "groupby": ["country","cpi_change_country"]
+        }
+    ],
+    "layer": [
+      {
+        "mark": {
+          "type": "point",
+          "filled": true
+        },
+        "encoding": {
+          "x": {
+            "field": "cpi_change_country",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "sum_worth",
+            "type": "quantitative",
+            "scale": {"type": "log"}
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "line",
+          "color": "firebrick"
+        },
+        "transform": [
+          {
+            "regression": "sum_worth",
+            "on": "cpi_change_country"
+          }
+        ],
+        "encoding": {
+          "x": {
+            "title": "Inflation Rate",
+            "field": "cpi_change_country",
+            "type": "quantitative"
+          },
+          "y": {
+            "title": "Combined Wealth of Billiionaires by Country",
+            "field": "sum_worth",
+            "type": "quantitative",
+            "scale": {"type": "log"}
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "regression": "sum_worth",
+            "on": "cpi_change_country",
+            "params": true
+          },
+          {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+        ],
+        "mark": {
+          "type": "text",
+          "color": "firebrick",
+          "x": "width",
+          "align": "right",
+          "y": -5
+        },
+        "encoding": {
+          "text": {"type": "nominal", "field": "R2"}
+        }
+      }
+    ]
+  }
+  

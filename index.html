@@ -21,14 +21,24 @@
       </nav>
     
     <div id="symbol_map" class="container"></div>
+    <div id="scatter_plot" class="container"></div>
     <div id="population_pyramid" class= "container" ></div>
     <div id="boxplot" class="container"></div>
+    <div id="donut_chart" class="container"></div>
+    <div id="parallel_coordinate_plot" class="container"></div>
+    <div id="scatter_plot2" class="container"></div>
     
     <script type="text/javascript">
         var spec2 = "js/symbol_map.vg.json";
         vegaEmbed('#symbol_map', spec2).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
+    </script>
+    <script type="text/javascript">
+      var spec2 = "js/scatter_plot.vg.json";
+      vegaEmbed('#scatter_plot', spec2).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
     </script>
     <script type="text/javascript">
         var spec2 = "js/population_pyramid.vg.json";
@@ -42,6 +52,24 @@
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
       }).catch(console.error);
     </script>
+  <script type="text/javascript">
+      var spec2 = "js/donut_chart.vg.json";
+      vegaEmbed('#donut_chart', spec2).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+  </script>
+  <script type="text/javascript">
+    var spec2 = "js/parallel_coordinate_plot.vg.json";
+    vegaEmbed('#parallel_coordinate_plot', spec2).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  <script type="text/javascript">
+    var spec2 = "js/scatter_plot2.vg.json";
+    vegaEmbed('#scatter_plot2', spec2).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

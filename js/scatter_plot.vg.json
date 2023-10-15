@@ -1,20 +1,84 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Drag out a rectangular brush to highlight points.",
-    "data": {"url": "https://raw.githubusercontent.com/Yousuf-Monash/3179-Homework10/main/data/Billionaires%20Statistics%20Dataset.csv"},
-    "width":"container",
-    "params": [{
-      "name": "brush",
-      "select": "interval",
-      "value": {"x": [55, 160], "y": [13, 37]}
-    }],
-    "mark": "point",
-    "encoding": {
-        "x": {"title": "Age", "field": "age", "type": "quantitative"},
-        "y": {"title": "Final Worth","field": "finalWorth", "type": "quantitative"},
-        "color": {
-        "condition": {"param": "brush", "field": "category", "type": "nominal"},
-        "value": "grey"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Drag out a rectangular brush to highlight points.",
+  "data": {"url": "https://raw.githubusercontent.com/Yousuf-Monash/3179-Homework10/main/data/Billionaires%20Statistics%20Dataset.csv"},
+  "width": "container",
+  "height": 300,
+  "title": "Wealth by Age",
+  "layer": [
+    {
+      "params" :[
+        {
+          "name" : "selfMade_highlight",
+          "select" : { "type" : "point", "fields" : [ "selfMade" ]},
+          "bind" : "legend"
         }
+      ],
+      "mark":{"type": "point", "tooltip": true},
+      "encoding": {
+        "x": {"title": "Age", "field": "age", "type": "quantitative"},
+        "y": {
+          "title": "Net Worth in Millions",
+          "field": "finalWorth",
+          "type": "quantitative"
+        },
+        "color": {
+        "title": "Self Made",
+        "field": "selfMade", 
+        "type": "nominal"
+        },
+        "opacity" : {
+        "condition" : { "param" : "selfMade_highlight", "value" : 0.6 },
+        "value" : 0.15
+        }
+      }
+    },
+    {
+      "transform": [
+          {
+            "calculate": "'The richest man in the world has a Net Worth of ' + datum['finalWorth']/1000000000 + ' billion'",
+            "as": "text_annotation"
+          }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": -10
+      },
+      "encoding": {
+        "text": {"field": "text_annotation"},
+        "opacity": {
+          "condition": {
+            "test": "datum['finalWorth'] > 200000000000", 
+            "value": 1
+          },
+          "value": 0
+        },
+        "x": {"title": "Age", "field": "age", "type": "quantitative"},
+        "y": {
+          "title": "Net Worth in Millions",
+          "field": "finalWorth",
+          "type": "quantitative"
+        }
+      }
     }
+  ],
+  "config": {
+    "background": "#dff7f7",
+    "font": "PT Serif",
+    "padding": {"top": 10, "bottom": 10, "left": 30, "right": 30},
+    "view": {"stroke": null},
+    "legend": {
+      "titleFontSize": 12,
+      "titleColor": "gray",
+      "labelColor": "gray",
+      "direction": "horizontal",
+      "orient": "right",
+      "gradientLength": 180,
+      "gradientThickness": 10,
+      "gradientLabelOffset": 5,
+      "offset": 20
+    },
+    "text": {"fontSize": 13},
+    "title": {"fontSize": 20, "offset": 5}
   }
+}

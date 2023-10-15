@@ -77,6 +77,14 @@
           "text": {"type": "nominal", "field": "R2"}
         }
       }
-    ]
+    ],
+    "config": {
+        "background": "#e1fafa",
+        "font": "PT Serif",
+        "padding": {"top": 10, "bottom": 10, "left": 30, "right": 30},
+        "view": {"stroke": null},
+        "text": {"fontSize": 13},
+        "title": {"fontSize": 20, "offset": 5}
+    }
   }
   

@@ -1,1 +1,42 @@
-
+body {
+    background-color: #d8e6e6; /* Bootstrap light grey background color */
+}
+h1 {
+    font-family: 'PT Serif', serif;
+    text-align: center;
+    color: #495057; /* dark grey color for title */
+}
+h2 {
+    font-family: 'PT Serif', serif;
+    margin-bottom: 30px;
+    margin-top: -22px;
+    text-align: center;
+    color: #495057; /* dark grey color for title */
+}
+p {
+    color: #495057; /* dark grey color for paragraph text */
+    text-align: justify;
+}
+.highlight {
+    font-weight: 700;
+    color: #007bff; /* Bootstrap primary color for highlighted keywords */
+}
+h4.rhetorical {
+    font-family: 'PT Serif', serif;
+    color: #6c757d; /* Bootstrap secondary color for subtlety */
+    text-align: center;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+.navbar {
+    background-color: #000;
+    padding: 15px;
+    margin-bottom: 0;
+}
+h1.navbar-brand {
+    font-family: 'PT Serif', serif;
+    font-size: 48px;
+    color: #fff;
+    margin: auto;
+}

@@ -113,7 +113,7 @@
         "label": {"baseline": "middle", "align": "right", "dx": -5},
         "tick": {"orient": "horizontal"}
         },
-        "background": "#e1fafa",
+        "background": "white",
         "font": "PT Serif",
         "padding": {"top": 10, "bottom": 10, "left": 30, "right": 30},
         "view": {"stroke": null},

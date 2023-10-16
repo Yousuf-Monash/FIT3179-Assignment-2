@@ -1,5 +1,5 @@
 body {
-    background-color: #d8e6e6; /* Bootstrap light grey background color */
+    background-color: lightgray; /* Bootstrap light grey background color */
 }
 h1 {
     font-family: 'PT Serif', serif;
@@ -17,13 +17,9 @@ p {
     color: #495057; /* dark grey color for paragraph text */
     text-align: justify;
 }
-.highlight {
-    font-weight: 700;
-    color: #007bff; /* Bootstrap primary color for highlighted keywords */
-}
 h4.rhetorical {
     font-family: 'PT Serif', serif;
-    color: #6c757d; /* Bootstrap secondary color for subtlety */
+    color: darkblue; /* Bootstrap secondary color for subtlety */
     text-align: center;
     font-weight: normal;
     margin-top: 0px;
@@ -39,4 +35,31 @@ h1.navbar-brand {
     font-size: 48px;
     color: #fff;
     margin: auto;
+}
+.highlight {
+    font-weight: 700;
+    color: black; /* Bootstrap primary color for highlighted keywords */
+}
+.malehighlight{
+    font-weight: 700;
+    color: blue; /* Bootstrap primary color for highlighted keywords */
+}
+.femalehighlight{
+    font-weight: 700;
+    color: #f51dea; /* Bootstrap primary color for highlighted keywords */
+}
+.intro-paragraph {
+    padding-top: 0px;
+    font-size: 1.2rem; /* Increase the font size */
+    font-weight: 500; /* Make the font slightly bolder */
+    color: #333; /* Dark text color for better readability */
+    background-color: #f8f9fa; /* Light background color to make the paragraph stand out */
+    padding: 20px; /* Add some padding to create space around the text */
+    border-radius: 8px; /* Round the corners of the paragraph background */
+    text-align: justify; /* Justify text to create a clean look */
+    text-justify: inter-word; /* Improves spacing between words */
+}
+#maincontainer{
+    padding-top: 1px;
+    background-color: #E6F5FF;
 }

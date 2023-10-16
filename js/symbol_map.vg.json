@@ -69,7 +69,7 @@
     }
   ],
   "config": {
-    "background": "#e1fafa",
+    "background": "white",
     "font": "PT Serif",
     "padding": {"top": 10, "bottom": 10, "left": 30, "right": 30},
     "view": {"stroke": null},

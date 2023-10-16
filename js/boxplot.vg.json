@@ -26,7 +26,7 @@
       "boxplot": {
         "extent": 2
       },
-      "background": "#dff7f7",
+      "background": "white",
       "font": "PT Serif",
       "padding": {"top": 10, "bottom": 10, "left": 30, "right": 30},
       "view": {"stroke": null},

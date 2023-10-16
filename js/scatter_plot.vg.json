@@ -15,7 +15,7 @@
           "bind" : "legend"
         }
       ],
-      "mark":{"type": "point", "tooltip": true},
+      "mark":{"type": "point"},
       "encoding": {
         "x": {"title": "Age", "field": "age", "type": "quantitative"},
         "y": {
@@ -32,7 +32,30 @@
         "opacity" : {
         "condition" : { "param" : "selfMade_highlight", "value" : 0.6 },
         "value" : 0.15
-        }
+        },
+        "tooltip" : [
+          {
+            "field": "personName",
+            "type": "nominal",
+            "title": "Name"
+          },
+          {
+            "field": "age",
+            "type": "quantitative",
+            "title": "Age"
+          },
+          {
+            "field": "finalWorth",
+            "type": "quantitative",
+            "title": "Net Worth",
+            "format": "$,.2r"
+          },
+          {
+            "field": "selfMade",
+            "type": "nominal",
+            "title": "Self Made"
+          }
+        ]
       }
     },
     {

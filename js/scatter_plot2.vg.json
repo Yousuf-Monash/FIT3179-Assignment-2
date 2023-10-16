@@ -29,7 +29,24 @@
             "field": "sum_worth",
             "type": "quantitative",
             "scale": {"type": "log"}
-          }
+          },
+          "tooltip":[
+            {
+                "field": "country",
+                "type": "nominal",
+                "title": "Country"
+            },
+            {
+                "field": "sum_worth",
+                "type": "quantitative",
+                "title": "Combined Wealth"
+            },
+            {
+                "field": "cpi_change_country",
+                "type": "quantitative",
+                "title": "Inflation Rate"
+            }
+          ]
         }
       },
       {

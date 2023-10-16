@@ -17,7 +17,9 @@
       "spacing": 5,
       "hconcat": [
         {
-          "transform": [{"filter": {"field": "gender", "equal": "Female"}}],
+          "transform": [
+            {"filter": {"field": "gender", "equal": "Female"}}
+          ],
           "title": "Female",
           "mark": "bar",
           "encoding": {
@@ -36,9 +38,16 @@
             },
             "color": {
               "field": "gender",
-              "scale": {"range": ["#1f77b4", "#e377c2"]},
+              "scale": {"range": ["orange", "green"]},
               "legend": null
-            }
+            },
+            "tooltip":[
+              {
+                "field": "age_bin",
+                "type": "ordinal",
+                "title": "Age Group"
+              }
+            ]
           }
         },
         {
@@ -73,7 +82,14 @@
               "axis": {"format": "s"},
               "scale": {"domain": [0, 650]}
             },
-            "color": {"field": "gender", "legend": null}
+            "color": {"field": "gender", "legend": null},
+            "tooltip":[
+              {
+                "field": "age_bin",
+                "type": "ordinal",
+                "title": "Age Group"
+              }
+            ]
           }
         }
       ],

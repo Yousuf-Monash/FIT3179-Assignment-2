@@ -42,11 +42,11 @@ h1.navbar-brand {
 }
 .malehighlight{
     font-weight: 700;
-    color: blue; /* Bootstrap primary color for highlighted keywords */
+    color: orange; /* Bootstrap primary color for highlighted keywords */
 }
 .femalehighlight{
     font-weight: 700;
-    color: #f51dea; /* Bootstrap primary color for highlighted keywords */
+    color: green; /* Bootstrap primary color for highlighted keywords */
 }
 .intro-paragraph {
     padding-top: 0px;
@@ -81,4 +81,7 @@ h1.navbar-brand {
 }
 #sideq{
     padding-bottom: 10px;
+}
+#credit-container {
+    padding: 20px;
 }

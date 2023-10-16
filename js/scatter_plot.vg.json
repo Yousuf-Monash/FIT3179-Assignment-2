@@ -1,13 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Drag out a rectangular brush to highlight points.",
-  "data": {"url": "https://raw.githubusercontent.com/Yousuf-Monash/3179-Homework10/main/data/Billionaires%20Statistics%20Dataset.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/Yousuf-Monash/FIT3179-Assignment-2/main/data/data.json"},
   "width": "container",
   "height": 300,
   "title": "Wealth by Age",
   "layer": [
     {
       "params" :[
+
         {
           "name" : "selfMade_highlight",
           "select" : { "type" : "point", "fields" : [ "selfMade" ]},
@@ -18,9 +19,10 @@
       "encoding": {
         "x": {"title": "Age", "field": "age", "type": "quantitative"},
         "y": {
-          "title": "Net Worth in Millions",
+          "title": "Net Worth",
           "field": "finalWorth",
-          "type": "quantitative"
+          "type": "quantitative",
+          "scale": {"type": "log"}
         },
         "color": {
         "title": "Self Made",
@@ -55,9 +57,32 @@
         },
         "x": {"title": "Age", "field": "age", "type": "quantitative"},
         "y": {
-          "title": "Net Worth in Millions",
           "field": "finalWorth",
+          "type": "quantitative",
+          "scale": {"type": "log"}
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "firebrick"
+      },
+      "transform": [
+        {
+          "regression": "finalWorth",
+          "on": "age"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "age",
           "type": "quantitative"
+        },
+        "y": {
+          "field": "finalWorth",
+          "type": "quantitative",
+          "scale": {"type": "log"}
         }
       }
     }
@@ -69,16 +94,16 @@
     "view": {"stroke": null},
     "legend": {
       "titleFontSize": 12,
-      "titleColor": "gray",
-      "labelColor": "gray",
-      "direction": "horizontal",
+      "titleColor": "black",
+      "labelColor": "black",
+      "direction": "vertical",
       "orient": "right",
       "gradientLength": 180,
       "gradientThickness": 10,
       "gradientLabelOffset": 5,
       "offset": 20
     },
-    "text": {"fontSize": 13},
+    "text": {"fontSize": 10},
     "title": {"fontSize": 20, "offset": 5}
   }
 }

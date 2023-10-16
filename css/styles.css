@@ -9,7 +9,7 @@ h1 {
 h2 {
     font-family: 'PT Serif', serif;
     margin-bottom: 30px;
-    margin-top: -22px;
+    margin-top: 10px;
     text-align: center;
     color: #495057; /* dark grey color for title */
 }
@@ -62,4 +62,23 @@ h1.navbar-brand {
 #maincontainer{
     padding-top: 1px;
     background-color: #E6F5FF;
+}
+
+#boxplot{
+    margin-bottom: -35px;
+}
+.metalhighlight{
+    font-weight: 700;
+    color: #e85454; /* Bootstrap primary color for highlighted keywords */
+}
+.energyhighlight{
+    font-weight: 700;
+    color: #78b4b4; /* Bootstrap primary color for highlighted keywords */
+}
+.technologyhighlight{
+    font-weight: 700;
+    color: #b87ca4; /* Bootstrap primary color for highlighted keywords */
+}
+#sideq{
+    padding-bottom: 10px;
 }

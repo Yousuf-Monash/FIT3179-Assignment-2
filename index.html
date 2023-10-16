@@ -15,9 +15,9 @@
     
     
       <nav class="navbar navbar-expand-lg">
-        <h1 class="navbar-brand">
-            Navigating the Wealth of Global Billionaires in 2023
-        </h1>
+          <h1 class="navbar-brand" style="color: white !important;">
+              Navigating the Wealth of Global Billionaires in 2023
+          </h1>
       </nav>
       <div class="container" id="maincontainer">
         <div class="container mt-5" style="margin-top: 0;">
@@ -38,7 +38,7 @@
               </div>
               
               <div class="col-lg-5">
-                  <h4 class="rhetorical">Have you ever wondered how age and gender play into the world of the ultra-wealthy?</h4>
+                  <h4 class="rhetorical" id="sideq">Have you ever wondered how age and gender play into the world of the ultra-wealthy?</h4>
                   
                   <p class="mt-4">
                       With our population pyramid, we can observe how billionaires are <span class="highlight">dispersed across different age brackets</span>. 
@@ -58,34 +58,32 @@
           <h4 class="rhetorical">Is age just a number when it comes to accumulating wealth?</h4>
           
           <p class="mt-4">
-              Age and wealth – two variables that often interact in fascinating ways in the world of billionaires. Our 
-              <span class="highlight">scatterplot</span> aims to elucidate this relationship, pinpointing each billionaire's age against their respective net worth. 
-          </p>
-          
-          <p>
-              Can we observe a trend that leans towards wealth accumulation with age? Or perhaps a surge of young entrepreneurs amassing considerable fortunes? Engage with the plot, explore various age brackets, and uncover the patterns hidden in the billionaires’ age-wealth relationship. 
+              Age and wealth – two variables that often interact in fascinating ways for the average person, but do they behave in the same way when it comes to the ultra rich? 
+              The chart below observes the relationship of <span class="highlight">Net Worth</span> against <span class="highlight">Age</span>, while also highlighting whether their wealth was self-earned or inherited. 
           </p>
   
         </div>
         <div id="scatter_plot" class="container d-flex justify-content-center"></div>
-        <div class="container mt-5">
-  
+        
+        <div class="container mt-5 text-center">
           <h2 class="adjusted-space">Wealth Across Industries</h2>
-          
-          <h4 class="rhetorical">Ever wondered which industries are producing the most billionaires?</h4>
-          
-          <p class="mt-4">
-              The disparity of wealth distribution extends not only through demographics but also industries. Our interactive 
-              <span class="highlight">boxplot</span> paints a vivid picture of how wealth is distributed across different sectors of the industry.
-          </p>
-          
+          <h4 class="rhetorical">Ever wondered which industries are most lucrative for billionaires?</h4>
           <p>
-              It's fascinating to note the sectors that are notably more lucrative, producing billionaires with significantly higher median net worths. What do these variances tell us about global economic trends, and how does this wealth correlate with innovation, job creation, and economic stability in these sectors? Let’s dig deeper and find what stories the data unfolds.
+              We've seen that age does not really affect a billionaire's wealth, but what about the industry they belong to?
           </p>
-  
-  
-        </div>
-        <div id="boxplot" class="container d-flex justify-content-center"></div>
+          <p>
+              The disparity of wealth distribution extends not only by country but also by industry. The boxplot below
+              paints a vivid picture of how wealth is <span class="highlight">distributed across different sectors of the industry</span>.
+          </p>
+      </div>
+      <div id="boxplot" class="container d-flex justify-content-center"></div>
+      <div class="container mt-5" id="boxplottext">
+        <p>
+          <span class="metalhighlight">Metals & Mining</span> and <span class="energyhighlight">Energy</span> are the two industries with the highest interquartile range, while <span class="technologyhighlight">Technology</span> industy has a large number
+          of mega-earning outliers.
+        </p>
+      </div>
+        
         <div class="container mt-5">
   
           <h2 class="adjusted-space">Parallel Insights Across Nations</h2>
@@ -94,11 +92,7 @@
           
           <p class="mt-4">
               Diving into a broader perspective, we intertwine individual and national financial narratives using a 
-              <span class="highlight">parallel coordinate plot</span>. This interactive visual explores billionaires' net worth alongside key national indicators: GDP, life expectancy, and tertiary education enrollment, unfolding a tapestry of interlinked stories.
-          </p>
-          
-          <p>
-              As we navigate through the multifaceted data, does a nation’s prosperity mirror the wealth of its billionaires, or are there striking anomalies? Does a longer life expectancy and higher education enrollment correlate with increased individual wealth? These are intriguing narratives waiting to be unearthed, and we invite you to explore, interact, and derive your own conclusions from the data.
+              parallel coordinate plot. This interactive visual explores billionaires' net worth alongside <span class="highlight">key national indicators</span>: GDP, life expectancy, and tertiary education enrollment, unfolding a tapestry of interlinked stories.
           </p>
   
         </div>
@@ -110,12 +104,8 @@
           <h4 class="rhetorical">Does amassed billionaire wealth correlate with national inflation?</h4>
           
           <p class="mt-4">
-              Turning our attention towards the macroeconomic scale, we invite you to explore the relationship between collective billionaire wealth and national inflation through our 
-              <span class="highlight">scatterplot</span>. One might hypothesize that nations harboring more billionaire wealth might display distinct inflation trends. However, the data might offer some unexpected insights. 
-          </p>
-          
-          <p>
-              Explore the visual landscape where each point articulates a narrative of wealth in the context of national economic dynamics. Does a nation with plentiful billionaire wealth also navigate through the choppy waters of high inflation, or do these fiscal titans manage to shield their wealth from the tempest of inflationary pressures? Dive in, interact, and uncover the stories lying within each data point.
+              Turning our attention towards the macroeconomic scale, we invite you to explore the relationship between collective billionaire <span class="highlight">wealth</span> and <span class="highlight">national inflation</span> through our 
+              scatterplot. One might hypothesize that nations harboring more billionaire wealth might display distinct inflation trends. However, the data seems to suggest otherwise. 
           </p>
       
         </div>

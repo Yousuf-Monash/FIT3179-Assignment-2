@@ -116,7 +116,6 @@
         "background": "white",
         "font": "PT Serif",
         "padding": {"top": 10, "bottom": 10, "left": 30, "right": 30},
-        "view": {"stroke": null},
         "legend": {
         "titleFontSize": 12,
         "titleColor": "gray",

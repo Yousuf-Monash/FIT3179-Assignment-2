@@ -66,6 +66,30 @@
         }
       ]
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": -380,
+        "dy": -150
+      },
+      "encoding": {
+        "text": {"value": "USA has a whopping 4.6 trillion dollars in billionaire wealth"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": -120,
+        "dy": -210
+      },
+      "encoding": {
+        "text": {"value": "Most of the world's billionaires come from Europe"}
+      }
     }
   ],
   "config": {

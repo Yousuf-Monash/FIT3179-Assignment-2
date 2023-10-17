@@ -88,6 +88,18 @@
     },
     {
       "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": -450,
+        "dy": 50
+      },
+      "encoding": {
+        "text": {"value": "No billioniare under 25 is a self-made billioniare"}
+      }
+    },
+    {
+      "mark": {
         "type": "line",
         "color": "firebrick"
       },
@@ -109,6 +121,7 @@
         }
       }
     }
+    
   ],
   "config": {
     "background": "white",

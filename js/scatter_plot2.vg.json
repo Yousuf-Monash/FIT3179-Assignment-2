@@ -5,103 +5,70 @@
     },
     "width": "container",
     "transform": [
-        {
-          "aggregate": [{
-          "op": "sum",
-          "field": "finalWorth",
-          "as": "sum_worth"
-          }],
-          "groupby": ["country","cpi_change_country"]
-        }
+      {
+        "aggregate": [
+          {
+            "op": "sum",
+            "field": "finalWorth",
+            "as": "sum_worth"
+          }
+        ],
+        "groupby": ["country", "cpi_change_country"]
+      },
+      {
+        "joinaggregate": [
+          {"op": "max", "field": "cpi_change_country", "as": "max_inflation"}
+        ]
+      },
+      {
+        "calculate": "'Country with highest inflation: ' + (datum.cpi_change_country === datum.max_inflation ? datum.country : '')",
+        "as": "highest_annotation"
+      }
     ],
     "layer": [
       {
-        "mark": {
-          "type": "point",
-          "filled": true
-        },
+        "mark": {"type": "point", "filled": true},
         "encoding": {
-          "x": {
-            "field": "cpi_change_country",
-            "type": "quantitative"
-          },
-          "y": {
-            "field": "sum_worth",
-            "type": "quantitative",
-            "scale": {"type": "log"}
-          },
-          "tooltip":[
-            {
-                "field": "country",
-                "type": "nominal",
-                "title": "Country"
-            },
-            {
-                "field": "sum_worth",
-                "type": "quantitative",
-                "title": "Combined Wealth"
-            },
-            {
-                "field": "cpi_change_country",
-                "type": "quantitative",
-                "title": "Inflation Rate"
-            }
+          "x": {"field": "cpi_change_country", "type": "quantitative"},
+          "y": {"field": "sum_worth", "type": "quantitative", "scale": {"type": "log"}},
+          "tooltip": [
+            {"field": "country", "type": "nominal", "title": "Country"},
+            {"field": "sum_worth", "type": "quantitative", "title": "Combined Wealth"},
+            {"field": "cpi_change_country", "type": "quantitative", "title": "Inflation Rate"}
           ]
         }
       },
       {
-        "mark": {
-          "type": "line",
-          "color": "firebrick"
-        },
-        "transform": [
-          {
-            "regression": "sum_worth",
-            "on": "cpi_change_country"
-          }
-        ],
+        "mark": {"type": "line", "color": "firebrick"},
+        "transform": [{"regression": "sum_worth", "on": "cpi_change_country"}],
         "encoding": {
-          "x": {
-            "title": "Inflation Rate",
-            "field": "cpi_change_country",
-            "type": "quantitative"
-          },
-          "y": {
-            "title": "Combined Wealth of Billiionaires by Country",
-            "field": "sum_worth",
-            "type": "quantitative",
-            "scale": {"type": "log"}
-          }
+          "x": {"title": "Inflation Rate", "field": "cpi_change_country", "type": "quantitative"},
+          "y": {"title": "Combined Wealth of Billionaires by Country", "field": "sum_worth", "type": "quantitative", "scale": {"type": "log"}}
         }
       },
       {
-        "transform": [
-          {
-            "regression": "sum_worth",
-            "on": "cpi_change_country",
-            "params": true
-          },
-          {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
-        ],
-        "mark": {
-          "type": "text",
-          "color": "firebrick",
-          "x": "width",
-          "align": "right",
-          "y": -5
-        },
+        "mark": {"type": "text", "dy": -10},
         "encoding": {
-          "text": {"type": "nominal", "field": "R2"}
+          "text": {"field": "highest_annotation", "type": "nominal"},
+          "opacity": {
+            "condition": {
+              "test": "datum.cpi_change_country === datum.max_inflation",
+              "value": 1
+            },
+            "value": 0
+          },
+          "x": {"field": "cpi_change_country", "type": "quantitative"},
+          "y": {"field": "sum_worth", "type": "quantitative"}
         }
       }
     ],
     "config": {
-        "background": "white",
-        "font": "PT Serif",
-        "padding": {"top": 10, "bottom": 10, "left": 30, "right": 30},
-        "view": {"stroke": null},
-        "text": {"fontSize": 13},
-        "title": {"fontSize": 20, "offset": 5}
+      "background": "white",
+      "font": "PT Serif",
+      "padding": {"top": 10, "bottom": 10, "left": 30, "right": 30},
+      "view": {"stroke": null},
+      "text": {"fontSize": 13},
+      "title": {"fontSize": 20, "offset": 5}
     }
   }
   
